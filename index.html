@@ -1,279 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
-    <title>Χρόνια Πολλά</title>
-    <style>
-        html,
-        body {
-            height: 100%;
-            width: 100%;
-        }
-        #map {
-            height: 100%;
-            width: 100%;
-        }
-        #efchi, #play, #pause {
-            position: absolute;
-            z-index: 123;
-            text-align: center;
-            width: 100%;
-            font-size: 3.4em;
-            color: #c0392b;
-            background: rgba(255, 255, 255, 0.95);
-        }
-        #efchi {
-            top: 90px;
-        }
-        #play, #pause {
-            bottom: 30px;
-            font-size: 1.7em;
-        }
-        .infoWindowContent {
-            color: #c0392b;
-            font-size: 25px;
-            font-family: "Times New Roman";
-        }
-        #pause {
-            display: none;
-        }
-    </style>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<title>Αμανίτα Καλαμάτα</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-<div id="map"></div>
-<div id="efchi"></div>
-<div id="play">παίξε</div>
-<div id="pause">στοπ στοπ στοπ</div>
-<audio id="cuntu" ontimeupdate="updateContent(Math.floor(this.currentTime))">
-    <source src="cuntu.mp3" type="audio/mpeg">
-</audio>
-<script>
-    var markerPositionContents = [
-        {position: {lat: 36.9750779, lng: 22.1765242}, content: 'Δίπλα δίπλα πρώτη φορά' }, // kapetanakis
-        {position: {lat: 37.0066735, lng: 22.1547584}, content: 'Δυνατό ρουφηχτό φιλί' }, // fili
-        {position: {lat: 37.047564, lng: 22.181891}, content: 'Ρυάκια σχηματίζονται στα παράθυρα του αυτοκινήτου'}, // ygrasia
-        {position: {lat: 37.0705191, lng: 22.1080757}, content: 'Χάη όσο δεν πάει'}, // koutalas
-        {position: {lat: 36.9814325, lng: 22.0758807}, content: 'Σινιάλο κι άλλο κι άλλο'}, //
-        {position: {lat: 36.920893, lng: 21.9301533}, content: 'Η πιο φιλόξενη σπηλιά'},
-        {position: {lat: 37.2761931, lng: 21.7381494}, content: 'Μια ωραία εικόνα'},
-        {position: {lat: 36.6896646, lng: 22.3759106}, content: 'Ο ωραιότερος ύπνος'},
-        {position: {lat: 36.796568, lng: 21.9598471}, content: 'Ένα πατάρι όσο τριακόσιες τόσες αγκαλιές'},
-        {position: {lat: 36.4368141, lng: 22.4864902}, content: 'Πάρε με αγκαλιά τώρα που λυσσομανάει'},
-        {position: {lat: 37.3493876, lng: 21.6941697}, content: 'Ένα εισοσιτετράωρο που κρατάει μέχρι τώρα'},
-        {position: {lat: 36.9587744, lng: 21.929014}, content: 'Μία πίτσα με θύελλες, καρδιοχτύπι και πολλή πολλή προσμονή'},
-        {position: {lat: 36.8890785, lng: 22.1794521}, content: 'Κάθε καθετή'}
+	
+	<!--  -->
+	<div class="simpleslide100">
+		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg01.jpg');"></div>
+		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg02.jpg');"></div>
+		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg03.jpg');"></div>
+	</div>
+
+	<div class="size1 overlay1">
+		<!--  -->
+		<div class="size1 flex-col-c-m p-l-15 p-r-15 p-t-50 p-b-50">
+			<h3 class="l1-txt1 txt-center p-b-25">
+				Σύντομα κοντά σας
+			</h3>
+
+			<p class="m2-txt1 txt-center p-b-48">
+				Η ιστοσελίδα μας είναι υπό κατασκευή. Βρείτε μας στο
+				<a href="https://www.facebook.com/Amanita-Kalamata-2132045080362711/">
+					<img src="images/facebook.png"/>
+				</a>
+				και στο
+				<a href="https://www.instagram.com/amanitakalamata/">
+					<img src="images/instagram.png"/>
+				</a>
+			</p>
+
+			<!--<div class="flex-w flex-c-m cd100 p-b-33">-->
+				<!--<div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">-->
+					<!--<span class="l2-txt1 p-b-9 days">35</span>-->
+					<!--<span class="s2-txt1">Days</span>-->
+				<!--</div>-->
+
+				<!--<div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">-->
+					<!--<span class="l2-txt1 p-b-9 hours">17</span>-->
+					<!--<span class="s2-txt1">Hours</span>-->
+				<!--</div>-->
+
+				<!--<div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">-->
+					<!--<span class="l2-txt1 p-b-9 minutes">50</span>-->
+					<!--<span class="s2-txt1">Minutes</span>-->
+				<!--</div>-->
+
+				<!--<div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">-->
+					<!--<span class="l2-txt1 p-b-9 seconds">39</span>-->
+					<!--<span class="s2-txt1">Seconds</span>-->
+				<!--</div>-->
+			<!--</div>-->
+
+			<!--<form class="w-full flex-w flex-c-m validate-form">-->
+
+				<!--<div class="wrap-input100 validate-input where1" data-validate = "Valid email is required: ex@abc.xyz">-->
+					<!--<input class="input100 placeholder0 s2-txt2" type="text" name="email" placeholder="Enter Email Address">-->
+					<!--<span class="focus-input100"></span>-->
+				<!--</div>-->
+				<!---->
+				<!---->
+				<!--<button class="flex-c-m size3 s2-txt3 how-btn1 trans-04 where1">-->
+					<!--Subscribe-->
+				<!--</button>-->
+			<!--</form>-->
+		</div>
+	</div>
 
 
 
-    ];
-    var HEART_URL = "heart.png";
+	
 
-    function initMap() {
-        // Constants
-        window.map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-            center: {lat: 36.9750779, lng: 22.1765242},
-            styles: [
-                {
-                    "featureType": "water",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "hue": "#ffffff"
-                        },
-                        {
-                            "saturation": -100
-                        },
-                        {
-                            "lightness": 100
-                        },
-                        {
-                            "visibility": "on"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "hue": "#ffffff"
-                        },
-                        {
-                            "saturation": -100
-                        },
-                        {
-                            "lightness": 100
-                        },
-                        {
-                            "visibility": "on"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "hue": "#000000"
-                        },
-                        {
-                            "saturation": -100
-                        },
-                        {
-                            "lightness": -100
-                        },
-                        {
-                            "visibility": "simplified"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road",
-                    "elementType": "labels",
-                    "stylers": [
-                        {
-                            "hue": "#ffffff"
-                        },
-                        {
-                            "saturation": -100
-                        },
-                        {
-                            "lightness": 100
-                        },
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "poi",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "hue": "#ffffff"
-                        },
-                        {
-                            "saturation": -100
-                        },
-                        {
-                            "lightness": 100
-                        },
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "administrative",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "hue": "#ffffff"
-                        },
-                        {
-                            "saturation": 0
-                        },
-                        {
-                            "lightness": 100
-                        },
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "transit",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "hue": "#000000"
-                        },
-                        {
-                            "saturation": 0
-                        },
-                        {
-                            "lightness": -100
-                        },
-                        {
-                            "visibility": "on"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "transit",
-                    "elementType": "labels",
-                    "stylers": [
-                        {
-                            "hue": "#ffffff"
-                        },
-                        {
-                            "saturation": 0
-                        },
-                        {
-                            "lightness": 100
-                        },
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                }
-            ]
-        });
-    }
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/moment.min.js"></script>
+	<script src="vendor/countdowntime/moment-timezone.min.js"></script>
+	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script>
+		$('.cd100').countdown100({
+			/*Set Endtime here*/
+			/*Endtime must be > current time*/
+			endtimeYear: 0,
+			endtimeMonth: 0,
+			endtimeDate: 35,
+			endtimeHours: 18,
+			endtimeMinutes: 0,
+			endtimeSeconds: 0,
+			timeZone: "" 
+			// ex:  timeZone: "America/New_York"
+			//go to " http://momentjs.com/timezone/ " to get timezone
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 
-    function addMarker(position, content) {
-        var infoWindow = new google.maps.InfoWindow({
-            content: '<span class="infoWindowContent">' + content + '</span>'
-        });
-        var marker = new google.maps.Marker({
-            position: position,
-            icon: HEART_URL,
-            map: window.map
-        });
-        marker.addListener('click', function() {
-            infoWindow.open(window.map, marker);
-        });
-    }
-
-    function updateContent(time) {
-        var $efchi = $('#efchi');
-        switch (time) {
-            case 4:
-                $efchi.text('χρόνια πολλά');
-                break;
-            case 6:
-                $efchi.text('με πολλές');
-                break;
-            case 8:
-                $efchi.text('με πολλές πολλές');
-                break;
-            case 10:
-                $efchi.text('με πολλές πολλές πολλές');
-                break;
-            case 12:
-                $efchi.hide();
-                markerPositionContents.forEach(function (markerPositionContent) {
-                    addMarker(markerPositionContent.position, markerPositionContent.content);
-                });
-                break;
-        }
-    }
-
-    $('#play').click(function() {
-        $('#cuntu')[0].play();
-        $('#play').hide();
-        $('#pause').show();
-    });
-    $('#pause').click(function() {
-        $('#cuntu')[0].pause();
-        $('#pause').hide();
-        $('#play').show();
-    });
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr4a82rD5CVy8jFkc4khjP2l6YU05rkqU&callback=initMap">
-</script>
 </body>
 </html>
